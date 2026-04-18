@@ -147,6 +147,12 @@
       display: block;
     }
 
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
     .nav-links {
       display: flex;
       align-items: center;
@@ -185,6 +191,46 @@
       color: var(--black) !important;
     }
 
+    /* ─── LANG TOGGLE ────────────────────────────────────────────── */
+    .lang-toggle {
+      display: flex;
+      align-items: center;
+      border: 1px solid var(--divider);
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .lang-btn {
+      background: transparent;
+      color: var(--gold-dim);
+      border: none;
+      padding: 6px 11px;
+      font-family: var(--sans);
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.18s, color 0.18s;
+      line-height: 1;
+    }
+
+    .lang-btn.active {
+      background: var(--gold);
+      color: var(--black);
+    }
+
+    .lang-btn:not(.active):hover {
+      color: var(--gold);
+    }
+
+    .lang-sep {
+      width: 1px;
+      height: 16px;
+      background: var(--divider);
+      flex-shrink: 0;
+    }
+
     .nav-hamburger {
       display: none;
       flex-direction: column;
@@ -217,7 +263,6 @@
         var(--black);
     }
 
-    /* Batik-inspired geometric pattern */
     .hero-bg::after {
       content: '';
       position: absolute; inset: 0;
@@ -375,9 +420,7 @@
       transition: border-color 0.2s;
     }
 
-    .hero-featured-card:hover {
-      border-top-color: var(--gold-hi);
-    }
+    .hero-featured-card:hover { border-top-color: var(--gold-hi); }
 
     .card-category {
       font-size: 0.65rem;
@@ -494,13 +537,10 @@
       align-items: start;
     }
 
-    .featured-main { }
-
     .featured-img {
       width: 100%;
       aspect-ratio: 4/3;
-      background:
-        linear-gradient(160deg, oklch(16% 0.05 82) 0%, oklch(10% 0.02 82) 100%);
+      background: linear-gradient(160deg, oklch(16% 0.05 82) 0%, oklch(10% 0.02 82) 100%);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -573,7 +613,6 @@
     }
 
     .sidebar-article:hover { opacity: 0.75; }
-
     .sidebar-article:first-child { padding-top: 0; }
 
     .sidebar-article-title {
@@ -645,8 +684,7 @@
     .news-card-img-inner {
       width: 100%;
       height: 100%;
-      background:
-        linear-gradient(135deg, oklch(14% 0.04 82), oklch(18% 0.05 82));
+      background: linear-gradient(135deg, oklch(14% 0.04 82), oklch(18% 0.05 82));
       transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
     }
 
@@ -667,10 +705,10 @@
       margin-bottom: 10px;
     }
 
-    .cat-berita  { color: var(--gold); }
-    .cat-bisnis  { color: oklch(72% 0.12 160); }
-    .cat-inspirasi { color: oklch(72% 0.12 30); }
-    .cat-tokoh   { color: oklch(72% 0.12 220); }
+    .cat-berita   { color: var(--gold); }
+    .cat-bisnis   { color: oklch(72% 0.12 160); }
+    .cat-inspirasi{ color: oklch(72% 0.12 30); }
+    .cat-tokoh    { color: oklch(72% 0.12 220); }
 
     .news-card-title {
       font-family: var(--serif);
@@ -689,11 +727,6 @@
       border-top: 1px solid var(--divider);
     }
 
-    /* Large card variant */
-    .news-card.card-large {
-      grid-column: span 1;
-    }
-
     .news-card.card-wide {
       grid-column: span 2;
       flex-direction: row;
@@ -705,17 +738,11 @@
       flex-shrink: 0;
     }
 
-    .news-card.card-wide .news-card-img-inner {
-      height: 100%;
-    }
+    .news-card.card-wide .news-card-img-inner { height: 100%; }
 
-    .news-card.card-wide .news-card-body {
-      padding: 32px;
-    }
+    .news-card.card-wide .news-card-body { padding: 32px; }
 
-    .news-card.card-wide .news-card-title {
-      font-size: 1.4rem;
-    }
+    .news-card.card-wide .news-card-title { font-size: 1.4rem; }
 
     /* ─── BUSINESS SPOTLIGHT ─────────────────────────────────────── */
     .spotlight {
@@ -777,8 +804,7 @@
     .spotlight-quote::before {
       content: '\201C';
       position: absolute;
-      left: 0;
-      top: -8px;
+      left: 0; top: -8px;
       font-family: var(--serif);
       font-size: 4rem;
       color: var(--gold);
@@ -820,17 +846,13 @@
       display: block;
     }
 
-    .spotlight-profile {
-      position: relative;
-      z-index: 1;
-    }
+    .spotlight-profile { position: relative; z-index: 1; }
 
     .spotlight-profile-img {
       width: 100%;
       aspect-ratio: 3/4;
       max-height: 520px;
-      background:
-        linear-gradient(180deg, oklch(14% 0.04 82) 0%, oklch(8% 0 0) 100%);
+      background: linear-gradient(180deg, oklch(14% 0.04 82) 0%, oklch(8% 0 0) 100%);
       position: relative;
       overflow: hidden;
       display: flex;
@@ -839,14 +861,12 @@
 
     .spotlight-profile-img::before {
       content: '';
-      position: absolute;
-      inset: 0;
-      background:
-        repeating-linear-gradient(
-          -45deg,
-          oklch(72% 0.13 82 / 0.04) 0px, oklch(72% 0.13 82 / 0.04) 1px,
-          transparent 1px, transparent 12px
-        );
+      position: absolute; inset: 0;
+      background: repeating-linear-gradient(
+        -45deg,
+        oklch(72% 0.13 82 / 0.04) 0px, oklch(72% 0.13 82 / 0.04) 1px,
+        transparent 1px, transparent 12px
+      );
     }
 
     .spotlight-profile-overlay {
@@ -923,9 +943,7 @@
       padding: 48px 40px;
     }
 
-    .inspo-card.inspo-featured:hover {
-      background: var(--gold-hi);
-    }
+    .inspo-card.inspo-featured:hover { background: var(--gold-hi); }
 
     .inspo-number {
       font-family: var(--serif);
@@ -936,9 +954,7 @@
       margin-bottom: auto;
     }
 
-    .inspo-card.inspo-featured .inspo-number {
-      color: oklch(30% 0.08 82 / 0.15);
-    }
+    .inspo-card.inspo-featured .inspo-number { color: oklch(30% 0.08 82 / 0.15); }
 
     .inspo-text {
       font-family: var(--fine);
@@ -963,11 +979,8 @@
       color: var(--gold-dim);
     }
 
-    .inspo-card.inspo-featured .inspo-source {
-      color: oklch(35% 0.08 82);
-    }
+    .inspo-card.inspo-featured .inspo-source { color: oklch(35% 0.08 82); }
 
-    /* Story cards row */
     .stories-row {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -1224,10 +1237,7 @@
                   transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
     }
 
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
 
     .reveal-delay-1 { transition-delay: 0.1s; }
     .reveal-delay-2 { transition-delay: 0.2s; }
@@ -1254,7 +1264,6 @@
       .stories-row { grid-template-columns: 1fr; }
       .footer-top { grid-template-columns: 1fr; }
       .hero-stats { gap: 24px; }
-      .spotlight-metrics { grid-template-columns: repeat(3, 1fr); }
     }
 
     @media (max-width: 480px) {
@@ -1268,41 +1277,47 @@
 
   <!-- TICKER -->
   <div class="ticker-bar" role="marquee" aria-label="Berita Terkini">
-    <div class="ticker-label">TERKINI</div>
+    <div class="ticker-label" data-i18n="ticker-label">TERKINI</div>
     <div class="ticker-scroll-wrap">
-      <div class="ticker-track">
-        <span class="ticker-item">IHSG Menguat 1,2% di Tengah Optimisme Perdagangan Global</span>
-        <span class="ticker-item">Bank Indonesia Pertahankan Suku Bunga di 5,75%</span>
-        <span class="ticker-item">Startup Unicorn Baru Indonesia Raih Pendanaan Rp 2,4 Triliun</span>
-        <span class="ticker-item">Ekspor Manufaktur Indonesia Catat Rekor Tertinggi Semester I</span>
-        <span class="ticker-item">OJK Dorong Transformasi Digital Perbankan Nasional</span>
-        <span class="ticker-item">Lima Pengusaha Muda Masuk Daftar Forbes 30 Under 30 Asia</span>
-        <span class="ticker-item">Investasi Asing Langsung Naik 18% di Kuartal Pertama 2026</span>
-        <!-- Duplicate for seamless loop -->
-        <span class="ticker-item">IHSG Menguat 1,2% di Tengah Optimisme Perdagangan Global</span>
-        <span class="ticker-item">Bank Indonesia Pertahankan Suku Bunga di 5,75%</span>
-        <span class="ticker-item">Startup Unicorn Baru Indonesia Raih Pendanaan Rp 2,4 Triliun</span>
-        <span class="ticker-item">Ekspor Manufaktur Indonesia Catat Rekor Tertinggi Semester I</span>
-        <span class="ticker-item">OJK Dorong Transformasi Digital Perbankan Nasional</span>
-        <span class="ticker-item">Lima Pengusaha Muda Masuk Daftar Forbes 30 Under 30 Asia</span>
-        <span class="ticker-item">Investasi Asing Langsung Naik 18% di Kuartal Pertama 2026</span>
+      <div class="ticker-track" id="ticker-track">
+        <span class="ticker-item" data-ticker="0">IHSG Menguat 1,2% di Tengah Optimisme Perdagangan Global</span>
+        <span class="ticker-item" data-ticker="1">Bank Indonesia Pertahankan Suku Bunga di 5,75%</span>
+        <span class="ticker-item" data-ticker="2">Startup Unicorn Baru Indonesia Raih Pendanaan Rp 2,4 Triliun</span>
+        <span class="ticker-item" data-ticker="3">Ekspor Manufaktur Indonesia Catat Rekor Tertinggi Semester I</span>
+        <span class="ticker-item" data-ticker="4">OJK Dorong Transformasi Digital Perbankan Nasional</span>
+        <span class="ticker-item" data-ticker="5">Lima Pengusaha Muda Masuk Daftar Forbes 30 Under 30 Asia</span>
+        <span class="ticker-item" data-ticker="6">Investasi Asing Langsung Naik 18% di Kuartal Pertama 2026</span>
+        <!-- Duplicates for seamless loop -->
+        <span class="ticker-item" data-ticker="0">IHSG Menguat 1,2% di Tengah Optimisme Perdagangan Global</span>
+        <span class="ticker-item" data-ticker="1">Bank Indonesia Pertahankan Suku Bunga di 5,75%</span>
+        <span class="ticker-item" data-ticker="2">Startup Unicorn Baru Indonesia Raih Pendanaan Rp 2,4 Triliun</span>
+        <span class="ticker-item" data-ticker="3">Ekspor Manufaktur Indonesia Catat Rekor Tertinggi Semester I</span>
+        <span class="ticker-item" data-ticker="4">OJK Dorong Transformasi Digital Perbankan Nasional</span>
+        <span class="ticker-item" data-ticker="5">Lima Pengusaha Muda Masuk Daftar Forbes 30 Under 30 Asia</span>
+        <span class="ticker-item" data-ticker="6">Investasi Asing Langsung Naik 18% di Kuartal Pertama 2026</span>
       </div>
     </div>
   </div>
 
   <!-- NAV -->
   <nav id="main-nav">
-    <img src="public/logo.jpg"
-         alt="Jagad Parang Garudo" class="nav-logo" />
-    <ul class="nav-links">
-      <li><a href="#berita">Berita</a></li>
-      <li><a href="#bisnis">Bisnis</a></li>
-      <li><a href="#inspirasi">Inspirasi</a></li>
-      <li><a href="#tokoh">Tokoh</a></li>
-      <li><a href="#video">Video</a></li>
-      <li><a href="#tentang">Tentang Kami</a></li>
-      <li><a href="#newsletter" class="nav-cta">Berlangganan</a></li>
-    </ul>
+    <img src="public/logo.jpg" alt="Jagad Parang Garudo" class="nav-logo" />
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="#berita"     data-i18n="nav-news">Berita</a></li>
+        <li><a href="#bisnis"     data-i18n="nav-business">Bisnis</a></li>
+        <li><a href="#inspirasi"  data-i18n="nav-inspiration">Inspirasi</a></li>
+        <li><a href="#tokoh"      data-i18n="nav-figures">Tokoh</a></li>
+        <li><a href="#video"      data-i18n="nav-video">Video</a></li>
+        <li><a href="#tentang"    data-i18n="nav-about">Tentang Kami</a></li>
+        <li><a href="#newsletter" class="nav-cta" data-i18n="nav-subscribe">Berlangganan</a></li>
+      </ul>
+      <div class="lang-toggle" role="group" aria-label="Language">
+        <button class="lang-btn active" data-lang="id" onclick="setLang('id')">ID</button>
+        <div class="lang-sep"></div>
+        <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+      </div>
+    </div>
     <div class="nav-hamburger" aria-label="Menu">
       <span></span><span></span><span></span>
     </div>
@@ -1311,67 +1326,59 @@
   <!-- HERO -->
   <section class="hero" aria-label="Hero">
     <div class="hero-bg"></div>
-
     <div class="hero-content">
       <div class="hero-eyebrow reveal">
         <div class="hero-eyebrow-line"></div>
-        <span class="hero-eyebrow-text">Edisi Utama — 18 April 2026</span>
+        <span class="hero-eyebrow-text" data-i18n="hero-eyebrow">Edisi Utama — 18 April 2026</span>
       </div>
-
-      <h1 class="hero-headline reveal reveal-delay-1">
+      <h1 class="hero-headline reveal reveal-delay-1" data-i18n-html="hero-headline">
         Membangun <em>Indonesia</em><br/>dari Ruang&nbsp;Bisnis
       </h1>
-
-      <p class="hero-deck reveal reveal-delay-2">
-        Liputan mendalam tentang ekonomi, kewirausahaan, dan kisah inspiratif
-        para pemimpin bisnis yang membentuk wajah Indonesia masa depan.
+      <p class="hero-deck reveal reveal-delay-2" data-i18n="hero-deck">
+        Liputan mendalam tentang ekonomi, kewirausahaan, dan kisah inspiratif para pemimpin bisnis yang membentuk wajah Indonesia masa depan.
       </p>
-
       <div class="hero-actions reveal reveal-delay-3">
-        <a href="#featured" class="btn-primary">Baca Selengkapnya</a>
-        <a href="#newsletter" class="btn-ghost">Langganan Gratis</a>
+        <a href="#featured" class="btn-primary" data-i18n="hero-btn-read">Baca Selengkapnya</a>
+        <a href="#newsletter" class="btn-ghost" data-i18n="hero-btn-subscribe">Langganan Gratis</a>
       </div>
-
       <div class="hero-stats reveal reveal-delay-3">
         <div>
           <span class="hero-stat-num">850K+</span>
-          <span class="hero-stat-label">Pembaca Aktif</span>
+          <span class="hero-stat-label" data-i18n="stat-readers">Pembaca Aktif</span>
         </div>
         <div>
           <span class="hero-stat-num">12K+</span>
-          <span class="hero-stat-label">Artikel Terbit</span>
+          <span class="hero-stat-label" data-i18n="stat-articles">Artikel Terbit</span>
         </div>
         <div>
           <span class="hero-stat-num">500+</span>
-          <span class="hero-stat-label">Tokoh Bisnis</span>
+          <span class="hero-stat-label" data-i18n="stat-figures">Tokoh Bisnis</span>
         </div>
       </div>
     </div>
-
     <div class="hero-visual">
       <div class="hero-featured-card reveal reveal-delay-2">
-        <div class="card-category">Berita Pilihan</div>
+        <div class="card-category" data-i18n="hero-card-cat">Berita Pilihan</div>
         <div class="hero-card-img"></div>
-        <h2 class="hero-card-headline">Revolusi Fintech: Bagaimana Startup Indonesia Mengubah Ekosistem Keuangan ASEAN</h2>
+        <h2 class="hero-card-headline" data-i18n="hero-card-headline">Revolusi Fintech: Bagaimana Startup Indonesia Mengubah Ekosistem Keuangan ASEAN</h2>
         <div class="hero-card-meta">
-          <span>Oleh Rizky Pratama</span>
+          <span data-i18n="hero-card-by">Oleh Rizky Pratama</span>
           <span>·</span>
           <span>18 April 2026</span>
           <span>·</span>
-          <span>8 mnt baca</span>
+          <span data-i18n="hero-card-read">8 mnt baca</span>
         </div>
       </div>
     </div>
   </section>
 
   <!-- FEATURED STORY -->
-  <section class="featured" id="featured" aria-label="Laporan Utama">
+  <section class="featured" id="featured">
     <div class="container">
       <div class="section-header reveal">
-        <h2 class="section-title">Laporan Utama</h2>
-        <a href="#berita" class="section-link">Semua Berita →</a>
+        <h2 class="section-title" data-i18n="featured-title">Laporan Utama</h2>
+        <a href="#berita" class="section-link" data-i18n="featured-all">Semua Berita →</a>
       </div>
-
       <div class="featured-grid">
         <div class="featured-main reveal">
           <div class="featured-img">
@@ -1380,53 +1387,50 @@
                 <path d="M24 4L44 40H4L24 4Z" stroke="#C9A227" stroke-width="1.5"/>
                 <circle cx="24" cy="26" r="6" stroke="#C9A227" stroke-width="1.5"/>
               </svg>
-              <span class="featured-img-label">Foto Utama</span>
+              <span class="featured-img-label" data-i18n="featured-img-label">Foto Utama</span>
             </div>
           </div>
-          <div class="card-category">Ekonomi & Bisnis</div>
-          <h2 class="featured-headline">
+          <div class="card-category" data-i18n="featured-cat">Ekonomi &amp; Bisnis</div>
+          <h2 class="featured-headline" data-i18n="featured-headline">
             Era Baru Kewirausahaan: Generasi Z Indonesia Mendefinisikan Ulang Makna Sukses di Abad&nbsp;21
           </h2>
-          <p class="featured-excerpt">
-            Lebih dari 4 juta wirausaha baru lahir di Indonesia dalam tiga tahun terakhir.
-            Mereka bukan sekadar mencari keuntungan — mereka membangun dampak, merancang warisan,
-            dan membuktikan bahwa bisnis yang bermakna adalah bisnis yang bertahan.
+          <p class="featured-excerpt" data-i18n="featured-excerpt">
+            Lebih dari 4 juta wirausaha baru lahir di Indonesia dalam tiga tahun terakhir. Mereka bukan sekadar mencari keuntungan — mereka membangun dampak, merancang warisan, dan membuktikan bahwa bisnis yang bermakna adalah bisnis yang bertahan.
           </p>
           <div class="article-meta">
-            <span>Oleh Dinda Maharani</span>
+            <span data-i18n="featured-by">Oleh Dinda Maharani</span>
             <span class="article-meta-sep">·</span>
             <span>18 April 2026</span>
             <span class="article-meta-sep">·</span>
-            <span>12 menit baca</span>
+            <span data-i18n="featured-read">12 menit baca</span>
           </div>
         </div>
-
         <div class="featured-sidebar reveal reveal-delay-1">
           <a href="#" class="sidebar-article">
             <div>
-              <span class="sidebar-article-title">ASEAN Economic Summit: Indonesia Perkuat Posisi sebagai Pusat Investasi Kawasan</span>
-              <span class="sidebar-article-meta">Bisnis · 17 April 2026</span>
+              <span class="sidebar-article-title" data-i18n="sidebar-1-title">ASEAN Economic Summit: Indonesia Perkuat Posisi sebagai Pusat Investasi Kawasan</span>
+              <span class="sidebar-article-meta" data-i18n="sidebar-1-meta">Bisnis · 17 April 2026</span>
             </div>
             <div class="sidebar-article-thumb"></div>
           </a>
           <a href="#" class="sidebar-article">
             <div>
-              <span class="sidebar-article-title">Transformasi Digital UMKM: Dari Warung Tradisional ke Platform Global</span>
-              <span class="sidebar-article-meta">Teknologi · 17 April 2026</span>
+              <span class="sidebar-article-title" data-i18n="sidebar-2-title">Transformasi Digital UMKM: Dari Warung Tradisional ke Platform Global</span>
+              <span class="sidebar-article-meta" data-i18n="sidebar-2-meta">Teknologi · 17 April 2026</span>
             </div>
             <div class="sidebar-article-thumb"></div>
           </a>
           <a href="#" class="sidebar-article">
             <div>
-              <span class="sidebar-article-title">IPO Raksasa: Lima Perusahaan Indonesia yang Siap Melantai di Bursa Tahun Ini</span>
-              <span class="sidebar-article-meta">Pasar Modal · 16 April 2026</span>
+              <span class="sidebar-article-title" data-i18n="sidebar-3-title">IPO Raksasa: Lima Perusahaan Indonesia yang Siap Melantai di Bursa Tahun Ini</span>
+              <span class="sidebar-article-meta" data-i18n="sidebar-3-meta">Pasar Modal · 16 April 2026</span>
             </div>
             <div class="sidebar-article-thumb"></div>
           </a>
           <a href="#" class="sidebar-article">
             <div>
-              <span class="sidebar-article-title">Ekonomi Hijau: Peluang Investasi Senilai Rp 500 Triliun Menanti Pengusaha Muda</span>
-              <span class="sidebar-article-meta">Investasi · 16 April 2026</span>
+              <span class="sidebar-article-title" data-i18n="sidebar-4-title">Ekonomi Hijau: Peluang Investasi Senilai Rp 500 Triliun Menanti Pengusaha Muda</span>
+              <span class="sidebar-article-meta" data-i18n="sidebar-4-meta">Investasi · 16 April 2026</span>
             </div>
             <div class="sidebar-article-thumb"></div>
           </a>
@@ -1436,73 +1440,56 @@
   </section>
 
   <!-- NEWS GRID -->
-  <section class="news-section" id="berita" aria-label="Berita Terbaru">
+  <section class="news-section" id="berita">
     <div class="container">
       <div class="section-header reveal">
-        <h2 class="section-title">Berita Terbaru</h2>
-        <a href="#" class="section-link">Lihat Semua →</a>
+        <h2 class="section-title" data-i18n="news-title">Berita Terbaru</h2>
+        <a href="#" class="section-link" data-i18n="news-all">Lihat Semua →</a>
       </div>
-
       <div class="news-grid">
-        <!-- Wide featured card -->
         <a href="#" class="news-card card-wide reveal">
-          <div class="news-card-img">
-            <div class="news-card-img-inner"></div>
-          </div>
+          <div class="news-card-img"><div class="news-card-img-inner"></div></div>
           <div class="news-card-body">
-            <span class="news-card-cat cat-bisnis">Bisnis</span>
-            <h3 class="news-card-title">
+            <span class="news-card-cat cat-bisnis" data-i18n="cat-bisnis">Bisnis</span>
+            <h3 class="news-card-title" data-i18n="news-1-title">
               Konglomerasi Baru Indonesia: Bagaimana Tiga Keluarga Wirausaha Menguasai Ekosistem Digital Senilai $40 Miliar
             </h3>
-            <p style="font-size:0.85rem;color:oklch(65% 0.01 85);line-height:1.6;margin-bottom:16px;">
+            <p style="font-size:0.85rem;color:oklch(65% 0.01 85);line-height:1.6;margin-bottom:16px;" data-i18n="news-1-excerpt">
               Peta kekuatan bisnis digital Indonesia tengah bergeser. Generasi penerus konglomerat tradisional kini memimpin revolusi platform yang mengancam dominasi pemain asing.
             </p>
-            <div class="news-card-meta">Oleh Farid Kusuma · 18 April 2026 · 10 mnt</div>
+            <div class="news-card-meta" data-i18n="news-1-meta">Oleh Farid Kusuma · 18 April 2026 · 10 mnt</div>
           </div>
         </a>
-
         <a href="#" class="news-card reveal reveal-delay-1">
-          <div class="news-card-img">
-            <div class="news-card-img-inner" style="background:linear-gradient(135deg, oklch(12% 0.05 160), oklch(16% 0.06 160));"></div>
-          </div>
+          <div class="news-card-img"><div class="news-card-img-inner" style="background:linear-gradient(135deg, oklch(12% 0.05 160), oklch(16% 0.06 160));"></div></div>
           <div class="news-card-body">
-            <span class="news-card-cat cat-berita">Berita</span>
-            <h3 class="news-card-title">Cadangan Devisa Indonesia Tembus $150 Miliar, Rekor Baru Sepanjang Sejarah</h3>
-            <div class="news-card-meta">17 April 2026 · 5 mnt</div>
+            <span class="news-card-cat cat-berita" data-i18n="cat-berita">Berita</span>
+            <h3 class="news-card-title" data-i18n="news-2-title">Cadangan Devisa Indonesia Tembus $150 Miliar, Rekor Baru Sepanjang Sejarah</h3>
+            <div class="news-card-meta" data-i18n="news-2-meta">17 April 2026 · 5 mnt</div>
           </div>
         </a>
-
-        <!-- Row 2 -->
         <a href="#" class="news-card reveal">
-          <div class="news-card-img">
-            <div class="news-card-img-inner" style="background:linear-gradient(135deg, oklch(12% 0.04 30), oklch(16% 0.05 30));"></div>
-          </div>
+          <div class="news-card-img"><div class="news-card-img-inner" style="background:linear-gradient(135deg, oklch(12% 0.04 30), oklch(16% 0.05 30));"></div></div>
           <div class="news-card-body">
-            <span class="news-card-cat cat-inspirasi">Inspirasi</span>
-            <h3 class="news-card-title">Dari Garasi ke Unicorn: Kisah Wanita Pengusaha yang Membangun Imperium Logistik</h3>
-            <div class="news-card-meta">17 April 2026 · 7 mnt</div>
+            <span class="news-card-cat cat-inspirasi" data-i18n="cat-inspirasi">Inspirasi</span>
+            <h3 class="news-card-title" data-i18n="news-3-title">Dari Garasi ke Unicorn: Kisah Wanita Pengusaha yang Membangun Imperium Logistik</h3>
+            <div class="news-card-meta" data-i18n="news-3-meta">17 April 2026 · 7 mnt</div>
           </div>
         </a>
-
         <a href="#" class="news-card reveal reveal-delay-1">
-          <div class="news-card-img">
-            <div class="news-card-img-inner" style="background:linear-gradient(135deg, oklch(12% 0.04 82), oklch(16% 0.06 82));"></div>
-          </div>
+          <div class="news-card-img"><div class="news-card-img-inner" style="background:linear-gradient(135deg, oklch(12% 0.04 82), oklch(16% 0.06 82));"></div></div>
           <div class="news-card-body">
-            <span class="news-card-cat cat-bisnis">Bisnis</span>
-            <h3 class="news-card-title">Agritech Indonesia Menarik Perhatian Investor Silicon Valley: Peluang atau Sekadar Hype?</h3>
-            <div class="news-card-meta">16 April 2026 · 8 mnt</div>
+            <span class="news-card-cat cat-bisnis" data-i18n="cat-bisnis">Bisnis</span>
+            <h3 class="news-card-title" data-i18n="news-4-title">Agritech Indonesia Menarik Perhatian Investor Silicon Valley: Peluang atau Sekadar Hype?</h3>
+            <div class="news-card-meta" data-i18n="news-4-meta">16 April 2026 · 8 mnt</div>
           </div>
         </a>
-
         <a href="#" class="news-card reveal reveal-delay-2">
-          <div class="news-card-img">
-            <div class="news-card-img-inner" style="background:linear-gradient(135deg, oklch(12% 0.04 220), oklch(16% 0.05 220));"></div>
-          </div>
+          <div class="news-card-img"><div class="news-card-img-inner" style="background:linear-gradient(135deg, oklch(12% 0.04 220), oklch(16% 0.05 220));"></div></div>
           <div class="news-card-body">
-            <span class="news-card-cat cat-tokoh">Tokoh</span>
-            <h3 class="news-card-title">Wawancara Eksklusif: CEO Gojek Bicara tentang Ekspansi, Profitabilitas, dan Masa Depan Super App</h3>
-            <div class="news-card-meta">16 April 2026 · 15 mnt</div>
+            <span class="news-card-cat cat-tokoh" data-i18n="cat-tokoh">Tokoh</span>
+            <h3 class="news-card-title" data-i18n="news-5-title">Wawancara Eksklusif: CEO Gojek Bicara tentang Ekspansi, Profitabilitas, dan Masa Depan Super App</h3>
+            <div class="news-card-meta" data-i18n="news-5-meta">16 April 2026 · 15 mnt</div>
           </div>
         </a>
       </div>
@@ -1510,49 +1497,43 @@
   </section>
 
   <!-- BUSINESS SPOTLIGHT -->
-  <section class="spotlight" id="tokoh" aria-label="Tokoh Bisnis">
+  <section class="spotlight" id="tokoh">
     <div class="container">
       <div class="spotlight-inner">
         <div>
           <div class="spotlight-label">
-            <span class="spotlight-label-text">Tokoh Minggu Ini</span>
+            <span class="spotlight-label-text" data-i18n="spotlight-label">Tokoh Minggu Ini</span>
             <div class="spotlight-label-line"></div>
           </div>
-
-          <blockquote class="spotlight-quote reveal">
-            Seorang pengusaha sejati tidak hanya membangun perusahaan —
-            ia membangun ekosistem yang mengangkat ribuan orang bersamanya.
-            Itulah warisan yang sesungguhnya.
+          <blockquote class="spotlight-quote reveal" data-i18n="spotlight-quote">
+            Seorang pengusaha sejati tidak hanya membangun perusahaan — ia membangun ekosistem yang mengangkat ribuan orang bersamanya. Itulah warisan yang sesungguhnya.
           </blockquote>
-
           <div class="spotlight-author reveal reveal-delay-1">
             <div class="spotlight-avatar">AR</div>
             <div>
               <span class="spotlight-author-name">Ahmad Ridwan Santoso</span>
-              <span class="spotlight-author-title">Pendiri & CEO, Nusantara Capital Group</span>
+              <span class="spotlight-author-title" data-i18n="spotlight-author-title">Pendiri &amp; CEO, Nusantara Capital Group</span>
             </div>
           </div>
-
           <div class="spotlight-metrics reveal reveal-delay-2">
             <div>
               <span class="spotlight-metric-val">Rp 8,4T</span>
-              <span class="spotlight-metric-label">Valuasi Perusahaan</span>
+              <span class="spotlight-metric-label" data-i18n="spotlight-metric-1">Valuasi Perusahaan</span>
             </div>
             <div>
               <span class="spotlight-metric-val">12.000+</span>
-              <span class="spotlight-metric-label">Karyawan</span>
+              <span class="spotlight-metric-label" data-i18n="spotlight-metric-2">Karyawan</span>
             </div>
             <div>
               <span class="spotlight-metric-val">9 Negara</span>
-              <span class="spotlight-metric-label">Jangkauan Bisnis</span>
+              <span class="spotlight-metric-label" data-i18n="spotlight-metric-3">Jangkauan Bisnis</span>
             </div>
           </div>
         </div>
-
         <div class="spotlight-profile reveal reveal-delay-1">
           <div class="spotlight-profile-img">
             <div class="spotlight-profile-overlay">
-              <span class="spotlight-profile-tag">Profil Lengkap →</span>
+              <span class="spotlight-profile-tag" data-i18n="spotlight-profile-tag">Profil Lengkap →</span>
             </div>
           </div>
         </div>
@@ -1561,92 +1542,77 @@
   </section>
 
   <!-- INSPIRATION -->
-  <section class="inspiration" id="inspirasi" aria-label="Inspirasi">
+  <section class="inspiration" id="inspirasi">
     <div class="container">
       <div class="section-header reveal">
-        <h2 class="section-title">Inspirasi</h2>
-        <a href="#" class="section-link">Semua Kisah →</a>
+        <h2 class="section-title" data-i18n="inspo-title">Inspirasi</h2>
+        <a href="#" class="section-link" data-i18n="inspo-all">Semua Kisah →</a>
       </div>
-
       <div class="inspiration-grid reveal">
         <div class="inspo-card">
           <div class="inspo-number">01</div>
-          <p class="inspo-text">
-            "Kegagalan bukan akhir dari perjalanan — ia adalah guru terbaik yang pernah kamu bayar dengan pengalaman nyata."
-          </p>
-          <span class="inspo-source">— Sri Mulyani · Menteri Keuangan RI</span>
+          <p class="inspo-text" data-i18n="inspo-quote-1">"Kegagalan bukan akhir dari perjalanan — ia adalah guru terbaik yang pernah kamu bayar dengan pengalaman nyata."</p>
+          <span class="inspo-source" data-i18n="inspo-source-1">— Sri Mulyani · Menteri Keuangan RI</span>
         </div>
-
         <div class="inspo-card inspo-featured">
           <div class="inspo-number">02</div>
-          <p class="inspo-text">
-            "Pasar tidak menunggu yang sempurna. Ia menanti yang berani memulai,
-            terus belajar, dan tidak pernah berhenti bergerak maju."
-          </p>
-          <span class="inspo-source">— Nadiem Makarim · Tokoh Inovasi</span>
+          <p class="inspo-text" data-i18n="inspo-quote-2">"Pasar tidak menunggu yang sempurna. Ia menanti yang berani memulai, terus belajar, dan tidak pernah berhenti bergerak maju."</p>
+          <span class="inspo-source" data-i18n="inspo-source-2">— Nadiem Makarim · Tokoh Inovasi</span>
         </div>
-
         <div class="inspo-card">
           <div class="inspo-number">03</div>
-          <p class="inspo-text">
-            "Bisnis yang bertahan bukan yang paling kuat, tapi yang paling cepat beradaptasi dengan perubahan zaman."
-          </p>
-          <span class="inspo-source">— Chairul Tanjung · Pengusaha Nasional</span>
+          <p class="inspo-text" data-i18n="inspo-quote-3">"Bisnis yang bertahan bukan yang paling kuat, tapi yang paling cepat beradaptasi dengan perubahan zaman."</p>
+          <span class="inspo-source" data-i18n="inspo-source-3">— Chairul Tanjung · Pengusaha Nasional</span>
         </div>
       </div>
-
       <div class="stories-row">
         <a href="#" class="story-card reveal">
-          <span class="story-number">01 / Kisah Sukses</span>
-          <h4 class="story-title">Membangun Brand Lokal yang Mendunia dari Yogyakarta</h4>
-          <span class="story-tag">Batik Nusantara · 8 mnt baca</span>
+          <span class="story-number" data-i18n="story-1-num">01 / Kisah Sukses</span>
+          <h4 class="story-title" data-i18n="story-1-title">Membangun Brand Lokal yang Mendunia dari Yogyakarta</h4>
+          <span class="story-tag" data-i18n="story-1-tag">Batik Nusantara · 8 mnt baca</span>
         </a>
         <a href="#" class="story-card reveal reveal-delay-1">
-          <span class="story-number">02 / Kisah Sukses</span>
-          <h4 class="story-title">Petani Milenial yang Mengubah Sawah Menjadi Startup Agritech Rp 500 Miliar</h4>
-          <span class="story-tag">Pertanian Digital · 6 mnt baca</span>
+          <span class="story-number" data-i18n="story-2-num">02 / Kisah Sukses</span>
+          <h4 class="story-title" data-i18n="story-2-title">Petani Milenial yang Mengubah Sawah Menjadi Startup Agritech Rp 500 Miliar</h4>
+          <span class="story-tag" data-i18n="story-2-tag">Pertanian Digital · 6 mnt baca</span>
         </a>
         <a href="#" class="story-card reveal reveal-delay-2">
-          <span class="story-number">03 / Kisah Sukses</span>
-          <h4 class="story-title">Dari PHK ke CEO: Bagaimana Satu Keputusan Mengubah Segalanya</h4>
-          <span class="story-tag">Wirausaha · 10 mnt baca</span>
+          <span class="story-number" data-i18n="story-3-num">03 / Kisah Sukses</span>
+          <h4 class="story-title" data-i18n="story-3-title">Dari PHK ke CEO: Bagaimana Satu Keputusan Mengubah Segalanya</h4>
+          <span class="story-tag" data-i18n="story-3-tag">Wirausaha · 10 mnt baca</span>
         </a>
       </div>
     </div>
   </section>
 
   <!-- NEWSLETTER -->
-  <section class="newsletter" id="newsletter" aria-label="Newsletter">
+  <section class="newsletter" id="newsletter">
     <div class="container">
       <div class="newsletter-inner">
-        <p class="newsletter-eyebrow reveal">Newsletter Harian</p>
-        <h2 class="newsletter-headline reveal reveal-delay-1">
+        <p class="newsletter-eyebrow reveal" data-i18n="newsletter-eyebrow">Newsletter Harian</p>
+        <h2 class="newsletter-headline reveal reveal-delay-1" data-i18n-html="newsletter-headline">
           Tetap Terdepan dalam<br/>Dunia Bisnis Indonesia
         </h2>
-        <p class="newsletter-sub reveal reveal-delay-2">
-          Dapatkan rangkuman berita bisnis terpilih, analisis mendalam, dan inspirasi
-          langsung ke kotak masuk Anda setiap pagi.
+        <p class="newsletter-sub reveal reveal-delay-2" data-i18n="newsletter-sub">
+          Dapatkan rangkuman berita bisnis terpilih, analisis mendalam, dan inspirasi langsung ke kotak masuk Anda setiap pagi.
         </p>
         <form class="newsletter-form reveal reveal-delay-3" onsubmit="return false;">
-          <input type="email" class="newsletter-input" placeholder="alamat@email.com" aria-label="Alamat Email" />
-          <button type="submit" class="newsletter-btn">Daftar</button>
+          <input type="email" class="newsletter-input" data-i18n-placeholder="newsletter-placeholder" placeholder="alamat@email.com" aria-label="Email" />
+          <button type="submit" class="newsletter-btn" data-i18n="newsletter-btn">Daftar</button>
         </form>
-        <p class="newsletter-note reveal">Gratis selamanya · Tanpa spam · Berhenti kapan saja</p>
+        <p class="newsletter-note reveal" data-i18n="newsletter-note">Gratis selamanya · Tanpa spam · Berhenti kapan saja</p>
       </div>
     </div>
   </section>
 
   <!-- FOOTER -->
-  <footer id="tentang" aria-label="Footer">
+  <footer id="tentang">
     <div class="container">
       <div class="footer-top">
         <div class="footer-brand">
-          <img src="public/logo.jpg"
-               alt="Jagad Parang Garudo" class="nav-logo" />
-          <p class="footer-brand-desc">
-            Jagad Parang Garudo adalah media bisnis premium Indonesia yang menyajikan
-            liputan mendalam tentang ekonomi, kewirausahaan, dan kisah inspiratif
-            para pemimpin bisnis bangsa.
+          <img src="public/logo.jpg" alt="Jagad Parang Garudo" class="nav-logo" />
+          <p class="footer-brand-desc" data-i18n="footer-desc">
+            Jagad Parang Garudo adalah media bisnis premium Indonesia yang menyajikan liputan mendalam tentang ekonomi, kewirausahaan, dan kisah inspiratif para pemimpin bisnis bangsa.
           </p>
           <div class="footer-social">
             <a href="#" class="social-link" aria-label="Instagram">IG</a>
@@ -1656,61 +1622,256 @@
             <a href="#" class="social-link" aria-label="TikTok">TK</a>
           </div>
         </div>
-
         <div>
-          <h3 class="footer-col-title">Kategori</h3>
+          <h3 class="footer-col-title" data-i18n="footer-cat-title">Kategori</h3>
           <ul class="footer-links">
-            <li><a href="#">Berita Nasional</a></li>
-            <li><a href="#">Ekonomi & Keuangan</a></li>
-            <li><a href="#">Bisnis & Industri</a></li>
-            <li><a href="#">Teknologi</a></li>
-            <li><a href="#">Investasi</a></li>
-            <li><a href="#">UMKM</a></li>
+            <li><a href="#" data-i18n="fcat-1">Berita Nasional</a></li>
+            <li><a href="#" data-i18n="fcat-2">Ekonomi &amp; Keuangan</a></li>
+            <li><a href="#" data-i18n="fcat-3">Bisnis &amp; Industri</a></li>
+            <li><a href="#" data-i18n="fcat-4">Teknologi</a></li>
+            <li><a href="#" data-i18n="fcat-5">Investasi</a></li>
+            <li><a href="#" data-i18n="fcat-6">UMKM</a></li>
           </ul>
         </div>
-
         <div>
-          <h3 class="footer-col-title">Inspirasi</h3>
+          <h3 class="footer-col-title" data-i18n="footer-inspo-title">Inspirasi</h3>
           <ul class="footer-links">
-            <li><a href="#">Tokoh Bisnis</a></li>
-            <li><a href="#">Kisah Sukses</a></li>
-            <li><a href="#">Kepemimpinan</a></li>
-            <li><a href="#">Inovasi</a></li>
-            <li><a href="#">Podcast</a></li>
-            <li><a href="#">Video Eksklusif</a></li>
+            <li><a href="#" data-i18n="fins-1">Tokoh Bisnis</a></li>
+            <li><a href="#" data-i18n="fins-2">Kisah Sukses</a></li>
+            <li><a href="#" data-i18n="fins-3">Kepemimpinan</a></li>
+            <li><a href="#" data-i18n="fins-4">Inovasi</a></li>
+            <li><a href="#" data-i18n="fins-5">Podcast</a></li>
+            <li><a href="#" data-i18n="fins-6">Video Eksklusif</a></li>
           </ul>
         </div>
-
         <div>
-          <h3 class="footer-col-title">Perusahaan</h3>
+          <h3 class="footer-col-title" data-i18n="footer-company-title">Perusahaan</h3>
           <ul class="footer-links">
-            <li><a href="#">Tentang Kami</a></li>
-            <li><a href="#">Redaksi</a></li>
-            <li><a href="#">Karir</a></li>
-            <li><a href="#">Iklan & Kerjasama</a></li>
-            <li><a href="#">Pedoman Media</a></li>
-            <li><a href="#">Kontak</a></li>
+            <li><a href="#" data-i18n="fcom-1">Tentang Kami</a></li>
+            <li><a href="#" data-i18n="fcom-2">Redaksi</a></li>
+            <li><a href="#" data-i18n="fcom-3">Karir</a></li>
+            <li><a href="#" data-i18n="fcom-4">Iklan &amp; Kerjasama</a></li>
+            <li><a href="#" data-i18n="fcom-5">Pedoman Media</a></li>
+            <li><a href="#" data-i18n="fcom-6">Kontak</a></li>
           </ul>
         </div>
       </div>
-
       <div class="footer-bottom">
-        <p class="footer-copy">
+        <p class="footer-copy" data-i18n-html="footer-copy">
           © 2026 <strong>Jagad Parang Garudo</strong>. Hak cipta dilindungi undang-undang.
         </p>
-        <p class="footer-tagline">Berita · Bisnis · Inspirasi</p>
+        <p class="footer-tagline" data-i18n="footer-tagline">Berita · Bisnis · Inspirasi</p>
       </div>
     </div>
   </footer>
 
   <script>
-    // Nav scroll effect
+    /* ─── TRANSLATIONS ─────────────────────────────────────────────── */
+    const t = {
+      id: {
+        'ticker-label': 'TERKINI',
+        'ticker-0': 'IHSG Menguat 1,2% di Tengah Optimisme Perdagangan Global',
+        'ticker-1': 'Bank Indonesia Pertahankan Suku Bunga di 5,75%',
+        'ticker-2': 'Startup Unicorn Baru Indonesia Raih Pendanaan Rp 2,4 Triliun',
+        'ticker-3': 'Ekspor Manufaktur Indonesia Catat Rekor Tertinggi Semester I',
+        'ticker-4': 'OJK Dorong Transformasi Digital Perbankan Nasional',
+        'ticker-5': 'Lima Pengusaha Muda Masuk Daftar Forbes 30 Under 30 Asia',
+        'ticker-6': 'Investasi Asing Langsung Naik 18% di Kuartal Pertama 2026',
+        'nav-news': 'Berita', 'nav-business': 'Bisnis', 'nav-inspiration': 'Inspirasi',
+        'nav-figures': 'Tokoh', 'nav-video': 'Video', 'nav-about': 'Tentang Kami',
+        'nav-subscribe': 'Berlangganan',
+        'hero-eyebrow': 'Edisi Utama — 18 April 2026',
+        'hero-headline': 'Membangun <em>Indonesia</em><br/>dari Ruang&nbsp;Bisnis',
+        'hero-deck': 'Liputan mendalam tentang ekonomi, kewirausahaan, dan kisah inspiratif para pemimpin bisnis yang membentuk wajah Indonesia masa depan.',
+        'hero-btn-read': 'Baca Selengkapnya', 'hero-btn-subscribe': 'Langganan Gratis',
+        'stat-readers': 'Pembaca Aktif', 'stat-articles': 'Artikel Terbit', 'stat-figures': 'Tokoh Bisnis',
+        'hero-card-cat': 'Berita Pilihan',
+        'hero-card-headline': 'Revolusi Fintech: Bagaimana Startup Indonesia Mengubah Ekosistem Keuangan ASEAN',
+        'hero-card-by': 'Oleh Rizky Pratama', 'hero-card-read': '8 mnt baca',
+        'featured-title': 'Laporan Utama', 'featured-all': 'Semua Berita →',
+        'featured-img-label': 'Foto Utama', 'featured-cat': 'Ekonomi & Bisnis',
+        'featured-headline': 'Era Baru Kewirausahaan: Generasi Z Indonesia Mendefinisikan Ulang Makna Sukses di Abad 21',
+        'featured-excerpt': 'Lebih dari 4 juta wirausaha baru lahir di Indonesia dalam tiga tahun terakhir. Mereka bukan sekadar mencari keuntungan — mereka membangun dampak, merancang warisan, dan membuktikan bahwa bisnis yang bermakna adalah bisnis yang bertahan.',
+        'featured-by': 'Oleh Dinda Maharani', 'featured-read': '12 menit baca',
+        'sidebar-1-title': 'ASEAN Economic Summit: Indonesia Perkuat Posisi sebagai Pusat Investasi Kawasan',
+        'sidebar-1-meta': 'Bisnis · 17 April 2026',
+        'sidebar-2-title': 'Transformasi Digital UMKM: Dari Warung Tradisional ke Platform Global',
+        'sidebar-2-meta': 'Teknologi · 17 April 2026',
+        'sidebar-3-title': 'IPO Raksasa: Lima Perusahaan Indonesia yang Siap Melantai di Bursa Tahun Ini',
+        'sidebar-3-meta': 'Pasar Modal · 16 April 2026',
+        'sidebar-4-title': 'Ekonomi Hijau: Peluang Investasi Senilai Rp 500 Triliun Menanti Pengusaha Muda',
+        'sidebar-4-meta': 'Investasi · 16 April 2026',
+        'news-title': 'Berita Terbaru', 'news-all': 'Lihat Semua →',
+        'cat-berita': 'Berita', 'cat-bisnis': 'Bisnis', 'cat-inspirasi': 'Inspirasi', 'cat-tokoh': 'Tokoh',
+        'news-1-title': 'Konglomerasi Baru Indonesia: Bagaimana Tiga Keluarga Wirausaha Menguasai Ekosistem Digital Senilai $40 Miliar',
+        'news-1-excerpt': 'Peta kekuatan bisnis digital Indonesia tengah bergeser. Generasi penerus konglomerat tradisional kini memimpin revolusi platform yang mengancam dominasi pemain asing.',
+        'news-1-meta': 'Oleh Farid Kusuma · 18 April 2026 · 10 mnt',
+        'news-2-title': 'Cadangan Devisa Indonesia Tembus $150 Miliar, Rekor Baru Sepanjang Sejarah',
+        'news-2-meta': '17 April 2026 · 5 mnt',
+        'news-3-title': 'Dari Garasi ke Unicorn: Kisah Wanita Pengusaha yang Membangun Imperium Logistik',
+        'news-3-meta': '17 April 2026 · 7 mnt',
+        'news-4-title': 'Agritech Indonesia Menarik Perhatian Investor Silicon Valley: Peluang atau Sekadar Hype?',
+        'news-4-meta': '16 April 2026 · 8 mnt',
+        'news-5-title': 'Wawancara Eksklusif: CEO Gojek Bicara tentang Ekspansi, Profitabilitas, dan Masa Depan Super App',
+        'news-5-meta': '16 April 2026 · 15 mnt',
+        'spotlight-label': 'Tokoh Minggu Ini',
+        'spotlight-quote': 'Seorang pengusaha sejati tidak hanya membangun perusahaan — ia membangun ekosistem yang mengangkat ribuan orang bersamanya. Itulah warisan yang sesungguhnya.',
+        'spotlight-author-title': 'Pendiri & CEO, Nusantara Capital Group',
+        'spotlight-metric-1': 'Valuasi Perusahaan', 'spotlight-metric-2': 'Karyawan', 'spotlight-metric-3': 'Jangkauan Bisnis',
+        'spotlight-profile-tag': 'Profil Lengkap →',
+        'inspo-title': 'Inspirasi', 'inspo-all': 'Semua Kisah →',
+        'inspo-quote-1': '"Kegagalan bukan akhir dari perjalanan — ia adalah guru terbaik yang pernah kamu bayar dengan pengalaman nyata."',
+        'inspo-source-1': '— Sri Mulyani · Menteri Keuangan RI',
+        'inspo-quote-2': '"Pasar tidak menunggu yang sempurna. Ia menanti yang berani memulai, terus belajar, dan tidak pernah berhenti bergerak maju."',
+        'inspo-source-2': '— Nadiem Makarim · Tokoh Inovasi',
+        'inspo-quote-3': '"Bisnis yang bertahan bukan yang paling kuat, tapi yang paling cepat beradaptasi dengan perubahan zaman."',
+        'inspo-source-3': '— Chairul Tanjung · Pengusaha Nasional',
+        'story-1-num': '01 / Kisah Sukses', 'story-1-title': 'Membangun Brand Lokal yang Mendunia dari Yogyakarta', 'story-1-tag': 'Batik Nusantara · 8 mnt baca',
+        'story-2-num': '02 / Kisah Sukses', 'story-2-title': 'Petani Milenial yang Mengubah Sawah Menjadi Startup Agritech Rp 500 Miliar', 'story-2-tag': 'Pertanian Digital · 6 mnt baca',
+        'story-3-num': '03 / Kisah Sukses', 'story-3-title': 'Dari PHK ke CEO: Bagaimana Satu Keputusan Mengubah Segalanya', 'story-3-tag': 'Wirausaha · 10 mnt baca',
+        'newsletter-eyebrow': 'Newsletter Harian',
+        'newsletter-headline': 'Tetap Terdepan dalam<br/>Dunia Bisnis Indonesia',
+        'newsletter-sub': 'Dapatkan rangkuman berita bisnis terpilih, analisis mendalam, dan inspirasi langsung ke kotak masuk Anda setiap pagi.',
+        'newsletter-placeholder': 'alamat@email.com', 'newsletter-btn': 'Daftar',
+        'newsletter-note': 'Gratis selamanya · Tanpa spam · Berhenti kapan saja',
+        'footer-desc': 'Jagad Parang Garudo adalah media bisnis premium Indonesia yang menyajikan liputan mendalam tentang ekonomi, kewirausahaan, dan kisah inspiratif para pemimpin bisnis bangsa.',
+        'footer-cat-title': 'Kategori',
+        'fcat-1': 'Berita Nasional', 'fcat-2': 'Ekonomi & Keuangan', 'fcat-3': 'Bisnis & Industri',
+        'fcat-4': 'Teknologi', 'fcat-5': 'Investasi', 'fcat-6': 'UMKM',
+        'footer-inspo-title': 'Inspirasi',
+        'fins-1': 'Tokoh Bisnis', 'fins-2': 'Kisah Sukses', 'fins-3': 'Kepemimpinan',
+        'fins-4': 'Inovasi', 'fins-5': 'Podcast', 'fins-6': 'Video Eksklusif',
+        'footer-company-title': 'Perusahaan',
+        'fcom-1': 'Tentang Kami', 'fcom-2': 'Redaksi', 'fcom-3': 'Karir',
+        'fcom-4': 'Iklan & Kerjasama', 'fcom-5': 'Pedoman Media', 'fcom-6': 'Kontak',
+        'footer-copy': '© 2026 <strong>Jagad Parang Garudo</strong>. Hak cipta dilindungi undang-undang.',
+        'footer-tagline': 'Berita · Bisnis · Inspirasi',
+      },
+      en: {
+        'ticker-label': 'BREAKING',
+        'ticker-0': 'Jakarta Stock Index Gains 1.2% on Global Trade Optimism',
+        'ticker-1': 'Bank Indonesia Holds Interest Rate at 5.75%',
+        'ticker-2': 'New Indonesian Unicorn Startup Secures $150M in Funding',
+        'ticker-3': 'Indonesian Manufacturing Exports Hit Record High in H1',
+        'ticker-4': 'OJK Accelerates National Banking Digital Transformation',
+        'ticker-5': 'Five Young Entrepreneurs Make Forbes 30 Under 30 Asia List',
+        'ticker-6': 'Foreign Direct Investment Surges 18% in Q1 2026',
+        'nav-news': 'News', 'nav-business': 'Business', 'nav-inspiration': 'Inspiration',
+        'nav-figures': 'Figures', 'nav-video': 'Video', 'nav-about': 'About Us',
+        'nav-subscribe': 'Subscribe',
+        'hero-eyebrow': 'Main Edition — April 18, 2026',
+        'hero-headline': 'Building <em>Indonesia</em><br/>from the Boardroom',
+        'hero-deck': 'In-depth coverage of economics, entrepreneurship, and the inspiring stories of business leaders shaping the face of tomorrow\'s Indonesia.',
+        'hero-btn-read': 'Read More', 'hero-btn-subscribe': 'Subscribe Free',
+        'stat-readers': 'Active Readers', 'stat-articles': 'Published Articles', 'stat-figures': 'Business Figures',
+        'hero-card-cat': 'Featured Story',
+        'hero-card-headline': 'Fintech Revolution: How Indonesian Startups Are Reshaping the ASEAN Financial Ecosystem',
+        'hero-card-by': 'By Rizky Pratama', 'hero-card-read': '8 min read',
+        'featured-title': 'Top Story', 'featured-all': 'All News →',
+        'featured-img-label': 'Main Photo', 'featured-cat': 'Economy & Business',
+        'featured-headline': 'The New Era of Entrepreneurship: Indonesian Gen Z Redefines What Success Means in the 21st Century',
+        'featured-excerpt': 'More than 4 million new entrepreneurs have emerged in Indonesia in the past three years. They are not merely chasing profit — they are building impact, crafting legacies, and proving that meaningful business is lasting business.',
+        'featured-by': 'By Dinda Maharani', 'featured-read': '12 min read',
+        'sidebar-1-title': 'ASEAN Economic Summit: Indonesia Strengthens Position as Regional Investment Hub',
+        'sidebar-1-meta': 'Business · April 17, 2026',
+        'sidebar-2-title': 'SME Digital Transformation: From Traditional Stalls to Global Platforms',
+        'sidebar-2-meta': 'Technology · April 17, 2026',
+        'sidebar-3-title': 'Mega IPO: Five Indonesian Companies Set to List on the Exchange This Year',
+        'sidebar-3-meta': 'Capital Markets · April 16, 2026',
+        'sidebar-4-title': 'Green Economy: Rp 500 Trillion in Investment Opportunities Await Young Entrepreneurs',
+        'sidebar-4-meta': 'Investment · April 16, 2026',
+        'news-title': 'Latest News', 'news-all': 'View All →',
+        'cat-berita': 'News', 'cat-bisnis': 'Business', 'cat-inspirasi': 'Inspiration', 'cat-tokoh': 'Figures',
+        'news-1-title': 'Indonesia\'s New Conglomerates: How Three Entrepreneurial Families Dominate a $40 Billion Digital Ecosystem',
+        'news-1-excerpt': 'The power map of Indonesia\'s digital business is shifting. Heirs of traditional conglomerates are now leading a platform revolution that threatens foreign dominance.',
+        'news-1-meta': 'By Farid Kusuma · April 18, 2026 · 10 min',
+        'news-2-title': 'Indonesia\'s Foreign Reserves Break $150 Billion, a Historic Record',
+        'news-2-meta': 'April 17, 2026 · 5 min',
+        'news-3-title': 'From Garage to Unicorn: The Woman Entrepreneur Who Built a Logistics Empire',
+        'news-3-meta': 'April 17, 2026 · 7 min',
+        'news-4-title': 'Indonesian Agritech Attracts Silicon Valley Investors: Opportunity or Just Hype?',
+        'news-4-meta': 'April 16, 2026 · 8 min',
+        'news-5-title': 'Exclusive Interview: Gojek\'s CEO on Expansion, Profitability and the Future of the Super App',
+        'news-5-meta': 'April 16, 2026 · 15 min',
+        'spotlight-label': 'Figure of the Week',
+        'spotlight-quote': 'A true entrepreneur doesn\'t just build a company — they build an ecosystem that lifts thousands of people alongside them. That is the real legacy.',
+        'spotlight-author-title': 'Founder & CEO, Nusantara Capital Group',
+        'spotlight-metric-1': 'Company Valuation', 'spotlight-metric-2': 'Employees', 'spotlight-metric-3': 'Countries',
+        'spotlight-profile-tag': 'Full Profile →',
+        'inspo-title': 'Inspiration', 'inspo-all': 'All Stories →',
+        'inspo-quote-1': '"Failure is not the end of the journey — it is the best teacher you ever paid for with real experience."',
+        'inspo-source-1': '— Sri Mulyani · Minister of Finance',
+        'inspo-quote-2': '"The market doesn\'t wait for perfection. It waits for those bold enough to start, keep learning, and never stop moving forward."',
+        'inspo-source-2': '— Nadiem Makarim · Innovation Leader',
+        'inspo-quote-3': '"The businesses that survive are not the strongest, but the ones that adapt fastest to the winds of change."',
+        'inspo-source-3': '— Chairul Tanjung · National Entrepreneur',
+        'story-1-num': '01 / Success Story', 'story-1-title': 'Building a Global Local Brand from Yogyakarta', 'story-1-tag': 'Batik Nusantara · 8 min read',
+        'story-2-num': '02 / Success Story', 'story-2-title': 'The Millennial Farmer Who Turned Rice Fields into a Rp 500 Billion Agritech Startup', 'story-2-tag': 'Digital Farming · 6 min read',
+        'story-3-num': '03 / Success Story', 'story-3-title': 'From Layoff to CEO: How One Decision Changed Everything', 'story-3-tag': 'Entrepreneurship · 10 min read',
+        'newsletter-eyebrow': 'Daily Newsletter',
+        'newsletter-headline': 'Stay Ahead in<br/>Indonesian Business',
+        'newsletter-sub': 'Get a curated digest of top business news, deep analysis, and inspiration delivered to your inbox every morning.',
+        'newsletter-placeholder': 'your@email.com', 'newsletter-btn': 'Subscribe',
+        'newsletter-note': 'Always free · No spam · Unsubscribe anytime',
+        'footer-desc': 'Jagad Parang Garudo is Indonesia\'s premium business media outlet, delivering in-depth coverage of economics, entrepreneurship, and the inspiring stories of the nation\'s business leaders.',
+        'footer-cat-title': 'Categories',
+        'fcat-1': 'National News', 'fcat-2': 'Economy & Finance', 'fcat-3': 'Business & Industry',
+        'fcat-4': 'Technology', 'fcat-5': 'Investment', 'fcat-6': 'SMEs',
+        'footer-inspo-title': 'Inspiration',
+        'fins-1': 'Business Figures', 'fins-2': 'Success Stories', 'fins-3': 'Leadership',
+        'fins-4': 'Innovation', 'fins-5': 'Podcast', 'fins-6': 'Exclusive Video',
+        'footer-company-title': 'Company',
+        'fcom-1': 'About Us', 'fcom-2': 'Editorial', 'fcom-3': 'Careers',
+        'fcom-4': 'Advertising & Partnerships', 'fcom-5': 'Media Guidelines', 'fcom-6': 'Contact',
+        'footer-copy': '© 2026 <strong>Jagad Parang Garudo</strong>. All rights reserved.',
+        'footer-tagline': 'News · Business · Inspiration',
+      }
+    };
+
+    let currentLang = 'id';
+
+    function setLang(lang) {
+      currentLang = lang;
+      document.documentElement.lang = lang;
+
+      // Update button states
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.lang === lang);
+      });
+
+      // Update text content
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.dataset.i18n;
+        if (t[lang][key] !== undefined) el.textContent = t[lang][key];
+      });
+
+      // Update innerHTML (elements with embedded tags)
+      document.querySelectorAll('[data-i18n-html]').forEach(el => {
+        const key = el.dataset.i18nHtml;
+        if (t[lang][key] !== undefined) el.innerHTML = t[lang][key];
+      });
+
+      // Update placeholders
+      document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+        const key = el.dataset.i18nPlaceholder;
+        if (t[lang][key] !== undefined) el.placeholder = t[lang][key];
+      });
+
+      // Update ticker items
+      document.querySelectorAll('[data-ticker]').forEach(el => {
+        const idx = el.dataset.ticker;
+        const key = `ticker-${idx}`;
+        if (t[lang][key] !== undefined) el.textContent = t[lang][key];
+      });
+    }
+
+    /* ─── NAV SCROLL ───────────────────────────────────────────────── */
     const nav = document.getElementById('main-nav');
     window.addEventListener('scroll', () => {
       nav.classList.toggle('scrolled', window.scrollY > 60);
     }, { passive: true });
 
-    // Scroll reveal
+    /* ─── SCROLL REVEAL ────────────────────────────────────────────── */
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(e => {
         if (e.isIntersecting) {
@@ -1722,26 +1883,25 @@
 
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-    // Trigger visible on load for above-fold items
     document.querySelectorAll('.hero .reveal').forEach(el => {
       setTimeout(() => el.classList.add('visible'), 100);
     });
 
-    // Ticker pause on hover
+    /* ─── TICKER ───────────────────────────────────────────────────── */
     const track = document.querySelector('.ticker-track');
-    const bar = document.querySelector('.ticker-bar');
+    const bar   = document.querySelector('.ticker-bar');
     bar.addEventListener('mouseenter', () => track.style.animationPlayState = 'paused');
     bar.addEventListener('mouseleave', () => track.style.animationPlayState = 'running');
 
-    // Mobile nav toggle
+    /* ─── MOBILE NAV ───────────────────────────────────────────────── */
     const hamburger = document.querySelector('.nav-hamburger');
-    const navLinks = document.querySelector('.nav-links');
+    const navLinks  = document.querySelector('.nav-links');
     hamburger.addEventListener('click', () => {
       const open = navLinks.style.display === 'flex';
       navLinks.style.display = open ? 'none' : 'flex';
       navLinks.style.flexDirection = 'column';
       navLinks.style.position = 'absolute';
-      navLinks.style.top = '72px';
+      navLinks.style.top = '90px';
       navLinks.style.left = '0'; navLinks.style.right = '0';
       navLinks.style.background = 'var(--black)';
       navLinks.style.padding = '24px clamp(20px, 5vw, 80px)';
